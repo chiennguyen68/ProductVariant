@@ -25,6 +25,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 1",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
   {
@@ -53,6 +54,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 2",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
   {
@@ -81,6 +83,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 1",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
   {
@@ -109,6 +112,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 1",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
   {
@@ -137,6 +141,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 1",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
 
@@ -166,6 +171,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 1",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
   {
@@ -194,6 +200,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 1",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
   {
@@ -222,6 +229,7 @@ export const products = [
     color: ["black", "#FAEBD7", "green"],
     categoryName: "loại sản phẩm 1",
     isFavorite: true,
+    startedDate: "20/11/2023",
     des: "Áo phông dáng rộng, cổ tròn, cộc tay Phía trước in họa tiết chữ khác màu Thiết kế áo thun cổ tròn unisex đơn giản. Thiết kế theo phong cách basic dễ mặc và dễ phối với nhiều trang phục khác nhau. Sản phẩm chứng chỉ cotton USA. Chất liệu 100% cotton: - Ưu điểm nguyên liệu: Thân thiện với môi trường. Độ bền tốt. Thấm hút tốt, thoáng mát, không gây hại cho sức khỏe. Thoáng mát khi mặc.",
   },
 ];

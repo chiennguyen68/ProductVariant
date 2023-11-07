@@ -130,7 +130,7 @@ export default function Navbar() {
           >
             <FontAwesomeIcon
               width={30}
-              height={25}
+              height={28}
               icon={faUser}
               color="#5a5959"
             />
