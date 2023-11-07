@@ -4,7 +4,7 @@ export const products = [
     name: "sản phẩm 1",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",
@@ -32,7 +32,7 @@ export const products = [
     name: "sản phẩm 2",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",
@@ -60,7 +60,7 @@ export const products = [
     name: "sản phẩm 3",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",
@@ -88,7 +88,7 @@ export const products = [
     name: "sản phẩm 4",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",
@@ -116,7 +116,7 @@ export const products = [
     name: "sản phẩm 5",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",
@@ -145,7 +145,7 @@ export const products = [
     name: "sản phẩm 6",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",
@@ -173,7 +173,7 @@ export const products = [
     name: "sản phẩm 7",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",
@@ -201,7 +201,7 @@ export const products = [
     name: "sản phẩm 8",
     code: "QEWQEQ12",
     thumb:
-      "https://www.yiwubazaar.com/resources/assets/images/default-product.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU",
     images: [
       {
         original: "https://picsum.photos/id/1018/1000/600/",

@@ -1,7 +1,4 @@
 import React from "react";
-
-// components
-
 import CardStats from "@/components/dashboard/Cards/CardStats";
 
 export default function HeaderStats() {
@@ -15,7 +12,7 @@ export default function HeaderStats() {
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="TRAFFIC"
+                  statSubtitle="Thông kê"
                   statTitle="350,897"
                   statArrow="up"
                   statPercent="3.48"
@@ -27,7 +24,7 @@ export default function HeaderStats() {
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="NEW USERS"
+                  statSubtitle="Người truy cập"
                   statTitle="2,356"
                   statArrow="down"
                   statPercent="3.48"
@@ -39,7 +36,7 @@ export default function HeaderStats() {
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="SALES"
+                  statSubtitle="Sản phẩm sale"
                   statTitle="924"
                   statArrow="down"
                   statPercent="1.10"
@@ -51,7 +48,7 @@ export default function HeaderStats() {
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="PERFORMANCE"
+                  statSubtitle="Hiệu suất"
                   statTitle="49,65%"
                   statArrow="up"
                   statPercent="12"
