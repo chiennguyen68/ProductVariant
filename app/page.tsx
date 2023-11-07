@@ -76,12 +76,12 @@ interface Products {
 }
 
 const listProduct = () => {
-  const product: Products[] = products;
+  let product: any = products;
 
   return (
     <>
       {product &&
-        product.map((p) => {
+        product.map((p: any) => {
           return (
             <div
               key={p.id}

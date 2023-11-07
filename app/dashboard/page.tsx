@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { products } from "@/common/data";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
@@ -14,7 +14,7 @@ interface Products {
 }
 
 export default function Products() {
-  const product: Products[] = products;
+  const product: any = products;
   return (
     <div className="container mx-auto px-4 sm:px-8">
       <div className="py-8">
@@ -46,7 +46,7 @@ export default function Products() {
               <tbody className="w-full">
                 <ScrollArea className="h-72 min-w-full w-full rounded-md border">
                   {product &&
-                    product.map((p) => {
+                    product.map((p: any) => {
                       return (
                         <tr key={p.id}>
                           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -75,7 +75,6 @@ export default function Products() {
                                 currency: "VND",
                               })}
                             </p>
-                            
                           </td>
                           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                             <p className="text-gray-900 whitespace-no-wrap">

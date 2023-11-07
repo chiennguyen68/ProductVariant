@@ -17,7 +17,7 @@ interface Product {
 
 export default function Product({ params }: { params: { id: string } }) {
   const id = params.id;
-  const [detail, setDetail] = useState({});
+  const [detail, setDetail] = useState<any>([]);
 
   useEffect(() => {
     setDetail(products.filter((p) => p.id === id));
@@ -50,9 +50,10 @@ export default function Product({ params }: { params: { id: string } }) {
             <div className="font-bold mt-[10px]">
               <span className="font-medium flex flex-col">Màu sắc:</span>{" "}
               {detail[0] &&
-                detail[0].color.map((c) => {
+                detail[0].color.map((c: any, index: any) => {
                   return (
                     <button
+                      key={index}
                       style={{ background: `${c}` }}
                       className={`px-6 py-4 mr-1 border`}
                     ></button>
@@ -66,8 +67,12 @@ export default function Product({ params }: { params: { id: string } }) {
             <div className="font-bold mt-[10px]">
               <span className="font-medium flex flex-col">Kích cỡ:</span>{" "}
               {detail[0] &&
-                detail[0].size.map((s) => {
-                  return <button className="px-6 py-2 mr-1 border">{s}</button>;
+                detail[0].size.map((s: any, index: any) => {
+                  return (
+                    <button key={index} className="px-6 py-2 mr-1 border">
+                      {s}
+                    </button>
+                  );
                 })}
             </div>
             <div className=" mt-[10px]">
