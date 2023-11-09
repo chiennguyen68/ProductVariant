@@ -11,7 +11,7 @@ export default async function Page() {
   const data = await getUsers();
 
   return (
-    <section className="py-24">
+    <section className="py-2">
       <div className="container">
         <h1 className="mb-6 text-3xl font-bold">Product Manager</h1>
         <DataTable columns={columns} data={data} />
