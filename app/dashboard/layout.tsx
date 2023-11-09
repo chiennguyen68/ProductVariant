@@ -2,9 +2,9 @@ import React from "react";
 
 // components
 
-import AdminNavbar from "@/components/dashboard/Navbars/AdminNavbar";
 import Sidebar from "@/components/dashboard/Sidebar/Sidebar";
 import HeaderStats from "@/components/dashboard/Headers/HeaderStats";
+import AdminNavbar from "@/components/dashboard/Navbars/AdminNavbar";
 
 export default function Admin({ children }: any) {
   return (

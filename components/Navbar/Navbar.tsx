@@ -42,13 +42,13 @@ export default function Navbar() {
       <div className="flex">
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Hàng mới</MenubarTrigger>
-          <MenubarContent>
+          <MenubarContent className="bg-white">
             <MenubarItem>Hàng mới loại 1</MenubarItem>
             <MenubarItem>Hàng mới loại 2</MenubarItem>
             <MenubarSeparator />
             <MenubarSub>
               <MenubarSubTrigger> Hàng mới loại 3</MenubarSubTrigger>
-              <MenubarSubContent>
+              <MenubarSubContent className="bg-white">
                 <MenubarItem>Hàng mới loại 3.1</MenubarItem>
                 <MenubarItem>Hàng mới loại 3.2</MenubarItem>
                 <MenubarItem>Hàng mới loại 3.3</MenubarItem>
@@ -59,13 +59,13 @@ export default function Navbar() {
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Nam</MenubarTrigger>
-          <MenubarContent>
+          <MenubarContent className="bg-white">
             <MenubarItem>Quần</MenubarItem>
             <MenubarItem>Áo</MenubarItem>
             <MenubarSeparator />
             <MenubarSub>
               <MenubarSubTrigger>Mũ</MenubarSubTrigger>
-              <MenubarSubContent>
+              <MenubarSubContent className="bg-white">
                 <MenubarItem>Mũ đặc biết</MenubarItem>
                 <MenubarSeparator />
                 <MenubarItem>Mũ loại 1</MenubarItem>
@@ -77,14 +77,14 @@ export default function Navbar() {
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Nữ</MenubarTrigger>
-          <MenubarContent>
+          <MenubarContent className="bg-white">
             <MenubarCheckboxItem>Áo</MenubarCheckboxItem>
             <MenubarCheckboxItem checked>Quần</MenubarCheckboxItem>
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Trẻ em</MenubarTrigger>
-          <MenubarContent>
+          <MenubarContent className="bg-white">
             <MenubarCheckboxItem>Áo</MenubarCheckboxItem>
             <MenubarCheckboxItem checked>Quần</MenubarCheckboxItem>
           </MenubarContent>

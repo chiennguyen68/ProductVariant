@@ -19,7 +19,10 @@ const UserDropdown = () => {
     <>
       <Popover>
         <PopoverTrigger asChild>
-          <Button className="zIndex-999 border-0 p-[25px]" variant="outline">
+          <Button
+            className="zIndex-999 border-0 p-[25px] bg-transparent"
+            variant="outline"
+          >
             <a className="text-blueGray-500 block">
               <div className="items-center flex">
                 <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
@@ -33,8 +36,8 @@ const UserDropdown = () => {
             </a>
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-80">
-          <div className="grid gap-4">
+        <PopoverContent className="w-80 bg-white">
+          <div className="grid gap-4 ">
             <div className="space-y-2" onClick={handleClick}>
               <h4 className="font-medium leading-none cursor-pointer ">
                 Logout
