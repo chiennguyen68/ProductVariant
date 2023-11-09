@@ -46,18 +46,24 @@ export default function Products() {
             Product Manager
           </h2>
         </div>
-        {DataTableProduct()}
+        {DataTableDemo()}
       </div>
     </div>
   );
 }
 
-const data: any = products;
+const data: Product[] = products;
+export type Product = {
+  id?: string | "";
+  name?: string | "";
+  thumb?: string | "";
+  price?: number | 0;
+};
 
-export const columns: any = [
+export const columns: ColumnDef<Product>[] | [] = [
   {
     id: "select",
-    header: ({ table }: any) => (
+    header: ({ table }) => (
       <Checkbox
         checked={table.getIsAllPageRowsSelected()}
         onCheckedChange={(value: any) =>
@@ -66,7 +72,7 @@ export const columns: any = [
         aria-label="Select all"
       />
     ),
-    cell: ({ row }: any) => (
+    cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
@@ -79,44 +85,39 @@ export const columns: any = [
   {
     accessorKey: "name",
     header: "Tên sản phẩm",
-    cell: ({ row }: any) => (
-      <div className="capitalize">{row.getValue("name")}</div>
-    ),
+    cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
   },
   {
     accessorKey: "thumb",
     header: "Ảnh",
-    cell: ({ row }: any) => (
+    cell: ({ row }) => (
       <img src={row.getValue("thumb")} alt="image" width={100} />
     ),
   },
   {
     accessorKey: "startedDate",
     header: "Ngày nhập",
-    cell: ({ row }: any) => (
+    cell: ({ row }) => (
       <div className="capitalize">{row.getValue("startedDate")}</div>
     ),
   },
-
   {
     accessorKey: "price",
     header: () => <div className="text-right">Giá</div>,
-    cell: ({ row }: any) => {
+    cell: ({ row }) => {
       const price = parseFloat(row.getValue("price"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "VND",
       }).format(price);
-
       return <div className="text-right font-medium">{formatted}</div>;
     },
   },
   {
     id: "actions",
     enableHiding: false,
-    cell: ({ row }: any) => {
+    cell: ({ row }) => {
       const payment = row.original;
-
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -142,7 +143,7 @@ export const columns: any = [
   },
 ];
 
-export function DataTableProduct() {
+export function DataTableDemo() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -190,8 +191,8 @@ export function DataTableProduct() {
           <DropdownMenuContent align="end">
             {table
               .getAllColumns()
-              .filter((column: any) => column.getCanHide())
-              .map((column: any) => {
+              .filter((column) => column.getCanHide())
+              .map((column) => {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
