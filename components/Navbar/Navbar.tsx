@@ -43,12 +43,8 @@ export default function Navbar() {
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Hàng mới</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>
-              Hàng mới loại 1 <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              Hàng mới loại 2 <MenubarShortcut>⌘N</MenubarShortcut>
-            </MenubarItem>
+            <MenubarItem>Hàng mới loại 1</MenubarItem>
+            <MenubarItem>Hàng mới loại 2</MenubarItem>
             <MenubarSeparator />
             <MenubarSub>
               <MenubarSubTrigger> Hàng mới loại 3</MenubarSubTrigger>
@@ -64,29 +60,17 @@ export default function Navbar() {
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Nam</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>
-              Quần <MenubarShortcut>⌘Z</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              Áo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
-            </MenubarItem>
+            <MenubarItem>Quần</MenubarItem>
+            <MenubarItem>Áo</MenubarItem>
             <MenubarSeparator />
             <MenubarSub>
               <MenubarSubTrigger>Mũ</MenubarSubTrigger>
               <MenubarSubContent>
-                <MenubarItem>
-                  Mũ đặc biết <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
+                <MenubarItem>Mũ đặc biết</MenubarItem>
                 <MenubarSeparator />
-                <MenubarItem>
-                  Mũ loại 1 <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
-                <MenubarItem>
-                  Mũ loại 2 <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
-                <MenubarItem>
-                  Mũ loại 3 <MenubarShortcut>⌘T</MenubarShortcut>
-                </MenubarItem>
+                <MenubarItem>Mũ loại 1</MenubarItem>
+                <MenubarItem>Mũ loại 2</MenubarItem>
+                <MenubarItem>Mũ loại 3</MenubarItem>
               </MenubarSubContent>
             </MenubarSub>
           </MenubarContent>
@@ -94,23 +78,15 @@ export default function Navbar() {
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Nữ</MenubarTrigger>
           <MenubarContent>
-            <MenubarCheckboxItem>
-              Áo <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarCheckboxItem>
-            <MenubarCheckboxItem checked>
-              Quần <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarCheckboxItem>
+            <MenubarCheckboxItem>Áo</MenubarCheckboxItem>
+            <MenubarCheckboxItem checked>Quần</MenubarCheckboxItem>
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger className="text-[20px]">Trẻ em</MenubarTrigger>
           <MenubarContent>
-            <MenubarCheckboxItem>
-              Áo <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarCheckboxItem>
-            <MenubarCheckboxItem checked>
-              Quần <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarCheckboxItem>
+            <MenubarCheckboxItem>Áo</MenubarCheckboxItem>
+            <MenubarCheckboxItem checked>Quần</MenubarCheckboxItem>
           </MenubarContent>
         </MenubarMenu>
       </div>
@@ -120,10 +96,6 @@ export default function Navbar() {
           className="border border-[#aeaeae] rounded-lg px-2 py-1 mr-[15px]"
         />
         <div className="flex justify-between">
-          <div className="flex flex-col items-center  font-medium mr-[10px]">
-            <FontAwesomeIcon width={30} icon={faShop} color="#5a5959" />
-            <p className="text-[#9d9d9d]">Cửa hàng</p>
-          </div>
           <div
             onClick={handleGotoDashboard}
             className="flex flex-col items-center  font-medium mr-[10px] cursor-pointer"
@@ -135,10 +107,6 @@ export default function Navbar() {
               color="#5a5959"
             />
             <p className="text-[#9d9d9d]">Dashboard</p>
-          </div>
-          <div className="flex flex-col items-center  font-medium">
-            <FontAwesomeIcon width={30} icon={faCartShopping} color="#5a5959" />
-            <p className="text-[#9d9d9d]">Giỏ hàng</p>
           </div>
         </div>
       </div>
