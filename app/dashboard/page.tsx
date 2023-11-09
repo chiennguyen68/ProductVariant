@@ -46,7 +46,7 @@ export default function Products() {
             Product Manager
           </h2>
         </div>
-        {DataTableDemo()}
+        {DataTableProduct()}
       </div>
     </div>
   );
@@ -143,7 +143,7 @@ export const columns: ColumnDef<Product>[] | [] = [
   },
 ];
 
-export function DataTableDemo() {
+export function DataTableProduct() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
