@@ -53,17 +53,11 @@ export default function Products() {
 }
 
 const data: any = products;
-export type Payment = {
-  id: string;
-  amount: number;
-  name: "pending" | "processing" | "success" | "failed";
-  email: string;
-};
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns = [
   {
     id: "select",
-    header: ({ table }) => (
+    header: ({ table }: any) => (
       <Checkbox
         checked={table.getIsAllPageRowsSelected()}
         onCheckedChange={(value: any) =>
@@ -72,7 +66,7 @@ export const columns: ColumnDef<Payment>[] = [
         aria-label="Select all"
       />
     ),
-    cell: ({ row }) => (
+    cell: ({ row }: any) => (
       <Checkbox
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
@@ -85,19 +79,21 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "name",
     header: "Tên sản phẩm",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
+    cell: ({ row }: any) => (
+      <div className="capitalize">{row.getValue("name")}</div>
+    ),
   },
   {
     accessorKey: "thumb",
     header: "Ảnh",
-    cell: ({ row }) => (
+    cell: ({ row }: any) => (
       <img src={row.getValue("thumb")} alt="image" width={100} />
     ),
   },
   {
     accessorKey: "startedDate",
     header: "Ngày nhập",
-    cell: ({ row }) => (
+    cell: ({ row }: any) => (
       <div className="capitalize">{row.getValue("startedDate")}</div>
     ),
   },
@@ -105,7 +101,7 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "price",
     header: () => <div className="text-right">Giá</div>,
-    cell: ({ row }) => {
+    cell: ({ row }: any) => {
       const price = parseFloat(row.getValue("price"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -118,7 +114,7 @@ export const columns: ColumnDef<Payment>[] = [
   {
     id: "actions",
     enableHiding: false,
-    cell: ({ row }) => {
+    cell: ({ row }: any) => {
       const payment = row.original;
 
       return (
