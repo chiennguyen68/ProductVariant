@@ -54,7 +54,7 @@ export default function Products() {
 
 const data: any = products;
 
-export const columns = [
+export const columns: any = [
   {
     id: "select",
     header: ({ table }: any) => (
@@ -190,8 +190,8 @@ export function DataTableProduct() {
           <DropdownMenuContent align="end">
             {table
               .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
+              .filter((column: any) => column.getCanHide())
+              .map((column: any) => {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
