@@ -30,11 +30,20 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+async function getPosts() {
+  const res = await fetch("api/post");
+  return res;
+}
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const handleSearch = (e: any) => {
     setSearchTerm(e.target.value);
   };
+  const posts = getPosts();
+
+  console.log(posts);
+
   return (
     <>
       <TopUp />
