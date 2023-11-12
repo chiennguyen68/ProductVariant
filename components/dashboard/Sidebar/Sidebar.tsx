@@ -7,8 +7,7 @@ import UserDropdown from "@/components/dashboard/Dropdowns/UserDropdown";
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   const router = useRouter();
-  const pathname = usePathname();
-  console.log(router, pathname);
+  const pathname: any = usePathname();
 
   return (
     <>
@@ -83,7 +82,7 @@ export default function Sidebar() {
                   href="/dashboard"
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (pathname.includes("/dashboard")
+                    (pathname && pathname.includes("/dashboard")
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
@@ -91,7 +90,7 @@ export default function Sidebar() {
                   <i
                     className={
                       "fas fa-tv mr-2 text-sm " +
-                      (pathname.includes("/dashboard")
+                      (pathname && pathname.includes("/dashboard")
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
@@ -105,7 +104,7 @@ export default function Sidebar() {
                   href="/settings"
                   className={
                     "text-xs uppercase py-3 font-bold block " +
-                    (pathname.includes("/settings")
+                    (pathname && pathname.includes("/settings")
                       ? "text-lightBlue-500 hover:text-lightBlue-600"
                       : "text-blueGray-700 hover:text-blueGray-500")
                   }
@@ -113,7 +112,7 @@ export default function Sidebar() {
                   <i
                     className={
                       "fas fa-tools mr-2 text-sm " +
-                      (pathname.includes("/settings")
+                      (pathname && pathname.includes("/settings")
                         ? "opacity-75"
                         : "text-blueGray-300")
                     }
