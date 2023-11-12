@@ -30,9 +30,33 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Skeleton } from "@/components/ui/skeleton";
 
-async function getPosts() {
-  const res = await fetch("api/post");
+async function getProducts() {
+  const res = await fetch("api/product");
+  if (!res.ok) {
+    console.error("Error:", res.status, res.statusText);
+    return [];
+  }
+
+  const data = await res.json();
+  return data;
+}
+
+async function getBrands() {
+  const res = await fetch("api/brand");
   if (!res.ok) {
     console.error("Error:", res.status, res.statusText);
     return [];
@@ -44,14 +68,28 @@ async function getPosts() {
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [openSelect, setOpenSelect] = useState(false);
+  const [valueSelect, setValueSelect] = useState<any>("");
+  const [listProduct, setListProduct] = useState([]);
+  const [listBrand, setListBrand] = useState([]);
+  const [showError, setShowError] = useState(false);
   const handleSearch = (e: any) => {
     setSearchTerm(e.target.value);
   };
   const fetchData = async () => {
     try {
-      const posts = await getPosts();
-      console.log("posts", posts);
+      const product = await getProducts();
+      const brand = await getBrands();
+      setListBrand(
+        brand.map((b: any) => {
+          return { label: b.name, value: b.name };
+        })
+      );
+      if (product) {
+        setListProduct(product);
+      }
     } catch (error) {
+      setShowError(true);
       console.error("Error fetching data:", error);
     }
   };
@@ -80,6 +118,42 @@ export default function Home() {
 
                   <div className="flex items-center" id="store-nav-content">
                     <div className="relative">
+                      <Popover open={openSelect} onOpenChange={setOpenSelect}>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="outline"
+                            role="combobox"
+                            aria-expanded={openSelect}
+                            className="w-[200px] justify-between p-[20px] mr-[10px]"
+                          >
+                            {valueSelect ? valueSelect : "Chọn nhãn hiệu"}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[200px] p-0">
+                          <Command>
+                            <CommandInput placeholder="Search brand..." />
+                            <CommandEmpty>Không có nhãn hiệu.</CommandEmpty>
+                            <CommandGroup>
+                              {listBrand.map((brand: any) => (
+                                <CommandItem
+                                  key={brand.value}
+                                  value={brand.value}
+                                  onSelect={(currentValue: any) => {
+                                    setValueSelect(
+                                      currentValue === valueSelect
+                                        ? ""
+                                        : currentValue
+                                    );
+                                    setOpenSelect(false);
+                                  }}
+                                >
+                                  {brand.label}
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
                       <input
                         value={searchTerm}
                         onChange={(e) => handleSearch(e)}
@@ -98,7 +172,55 @@ export default function Home() {
                   </div>
                 </div>
               </nav>
-              {listProduct()}
+              {listProduct.length && !showError ? (
+                <ProductWrapper listProduct={listProduct} />
+              ) : (
+                <>
+                  <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                    <Skeleton className="h-48 w-48 rounded mb-2" />
+                    <div className="w-full">
+                      <Skeleton className="h-4 w-[200px] mb-2" />
+                      <Skeleton className="h-4 w-[200px]" />
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                    <Skeleton className="h-48 w-48 rounded mb-2" />
+                    <div className="w-full">
+                      <Skeleton className="h-4 w-[200px] mb-2" />
+                      <Skeleton className="h-4 w-[200px]" />
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                    <Skeleton className="h-48 w-48 rounded mb-2" />
+                    <div className="w-full">
+                      <Skeleton className="h-4 w-[200px] mb-2" />
+                      <Skeleton className="h-4 w-[200px]" />
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                    <Skeleton className="h-48 w-48 rounded mb-2" />
+                    <div className="w-full">
+                      <Skeleton className="h-4 w-[200px] mb-2" />
+                      <Skeleton className="h-4 w-[200px]" />
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                    <Skeleton className="h-48 w-48 rounded mb-2" />
+                    <div className="w-full">
+                      <Skeleton className="h-4 w-[200px] mb-2" />
+                      <Skeleton className="h-4 w-[200px]" />
+                    </div>
+                  </div>
+                  <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                    <Skeleton className="h-48 w-48 rounded mb-2" />
+                    <div className="w-full">
+                      <Skeleton className="h-4 w-[200px] mb-2" />
+                      <Skeleton className="h-4 w-[200px]" />
+                    </div>
+                  </div>
+                </>
+              )}
+              {showError && "Có lỗi xảy ra vui lòng thử lại"}
             </div>
           </section>
         </div>
@@ -108,13 +230,11 @@ export default function Home() {
   );
 }
 
-const listProduct = () => {
-  let product: any = products;
-
+const ProductWrapper = ({ listProduct }: any) => {
   return (
     <>
-      {product &&
-        product.map((p: any) => {
+      {listProduct &&
+        listProduct.map((p: any) => {
           return (
             <div
               key={p.id}
@@ -124,7 +244,14 @@ const listProduct = () => {
                 <CardHeader>
                   <CardTitle>{p.name}</CardTitle>
                   <CardDescription>
-                    <img src={p.thumb} alt={p.name} />
+                    <img
+                      src={
+                        p.thumb
+                          ? p.thumb
+                          : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8sZtI7wrlEfa49bSTN5a3uk8b4twPve8nA&usqp=CAU"
+                      }
+                      alt={p.name}
+                    />
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

@@ -1,7 +1,5 @@
 "use client";
-
 import { ColumnDef } from "@tanstack/react-table";
-
 import { MoreHorizontal, ArrowUpDown } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 
@@ -17,9 +15,10 @@ import {
 
 export type Product = {
   id?: string | "";
-  name?: string | "";
+  title?: string | "";
   thumb?: string | "";
   price?: number | 0;
+  createdAt?: any;
 };
 
 export const columns: ColumnDef<Product>[] = [
@@ -45,10 +44,10 @@ export const columns: ColumnDef<Product>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "name",
+    accessorKey: "title",
     header: "Tên sản phẩm",
     cell: ({ row }: any) => (
-      <div className="capitalize">{row.getValue("name")}</div>
+      <div className="capitalize">{row.getValue("title")}</div>
     ),
   },
   {
@@ -59,10 +58,10 @@ export const columns: ColumnDef<Product>[] = [
     ),
   },
   {
-    accessorKey: "startedDate",
+    accessorKey: "createdAt",
     header: "Ngày nhập",
     cell: ({ row }: any) => (
-      <div className="capitalize">{row.getValue("startedDate")}</div>
+      <div className="capitalize">{row.getValue("createdAt")}</div>
     ),
   },
 
