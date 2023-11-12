@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-async-client-component */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
 "use client";
@@ -22,7 +23,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -32,7 +33,13 @@ import {
 
 async function getPosts() {
   const res = await fetch("api/post");
-  return res;
+  if (!res.ok) {
+    console.error("Error:", res.status, res.statusText);
+    return [];
+  }
+
+  const data = await res.json();
+  return data;
 }
 
 export default function Home() {
@@ -40,9 +47,18 @@ export default function Home() {
   const handleSearch = (e: any) => {
     setSearchTerm(e.target.value);
   };
-  const posts = getPosts();
+  const fetchData = async () => {
+    try {
+      const posts = await getPosts();
+      console.log("posts", posts);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
-  console.log(posts);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
