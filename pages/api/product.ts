@@ -49,7 +49,7 @@ export default async function handler(
         data: {
           title: title as string,
           price,
-          thumb,
+          thumb: thumb as string,
         },
       });
 
