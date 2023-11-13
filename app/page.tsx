@@ -172,7 +172,10 @@ export default function Home() {
                   </div>
                 </div>
               </nav>
-              {listProduct.length && !showError ? (
+
+              {showError ? (
+                "Có lỗi xảy ra vui lòng thử lại"
+              ) : listProduct.length && !showError ? (
                 <ProductWrapper listProduct={listProduct} />
               ) : (
                 <>
@@ -220,7 +223,6 @@ export default function Home() {
                   </div>
                 </>
               )}
-              {showError && "Có lỗi xảy ra vui lòng thử lại"}
             </div>
           </section>
         </div>
