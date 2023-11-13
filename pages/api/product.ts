@@ -43,15 +43,12 @@ export default async function handler(
 
   async function handlePostRequest(request: NextApiRequest) {
     try {
-      const { name, price }: any = request.body;
-
-      // Validate the incoming data as needed
+      const { title, price } = request.body;
 
       const createdProduct: Product = await prisma.product.create({
         data: {
-          name: name as string,
+          title: title as string,
           price,
-          // Add other product fields as needed
         },
       });
 
@@ -66,16 +63,13 @@ export default async function handler(
 
   async function handlePutRequest(request: NextApiRequest) {
     try {
-      const { id, name, price } = request.body;
-
-      // Validate the incoming data as needed
+      const { id, title, price } = request.body;
 
       const updatedProduct: Product = await prisma.product.update({
         where: { id },
         data: {
-          name : name as string,
+          title: title as string,
           price,
-          // Add other product fields as needed
         },
       });
 
@@ -91,8 +85,6 @@ export default async function handler(
   async function handleDeleteRequest(request: NextApiRequest) {
     try {
       const { id } = request.body;
-
-      // Validate the incoming data as needed
 
       const deletedProduct: Product = await prisma.product.delete({
         where: { id: id },
