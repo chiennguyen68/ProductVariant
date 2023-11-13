@@ -28,7 +28,7 @@ export default async function handler(
 
       const products: Product[] = await prisma.product.findMany({
         where: {
-          brandId: brandId ? brandId: undefined,
+          brandId: brandId ? brandId : undefined,
         },
       });
 
@@ -43,13 +43,13 @@ export default async function handler(
 
   async function handlePostRequest(request: NextApiRequest) {
     try {
-      const { name, price } = request.body;
+      const { name, price }: any = request.body;
 
       // Validate the incoming data as needed
 
       const createdProduct: Product = await prisma.product.create({
         data: {
-          name,
+          name: name as string,
           price,
           // Add other product fields as needed
         },
@@ -71,9 +71,9 @@ export default async function handler(
       // Validate the incoming data as needed
 
       const updatedProduct: Product = await prisma.product.update({
-        where: { id: Number(id) },
+        where: { id },
         data: {
-          name,
+          name : name as string,
           price,
           // Add other product fields as needed
         },
@@ -95,7 +95,7 @@ export default async function handler(
       // Validate the incoming data as needed
 
       const deletedProduct: Product = await prisma.product.delete({
-        where: { id: Number(id) },
+        where: { id: id },
       });
 
       res.status(200).json(deletedProduct);
