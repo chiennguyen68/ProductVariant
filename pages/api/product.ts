@@ -43,12 +43,13 @@ export default async function handler(
 
   async function handlePostRequest(request: NextApiRequest) {
     try {
-      const { title, price } = request.body;
+      const { title, price, thumb } = request.body;
 
       const createdProduct: Product = await prisma.product.create({
         data: {
           title: title as string,
           price,
+          thumb,
         },
       });
 
