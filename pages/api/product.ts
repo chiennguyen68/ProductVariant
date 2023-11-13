@@ -28,7 +28,7 @@ export default async function handler(
 
       const products: Product[] = await prisma.product.findMany({
         where: {
-          brandId: brandId ? Number(brandId) : undefined,
+          brandId: brandId ? brandId: undefined,
         },
       });
 
