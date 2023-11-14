@@ -1,13 +1,13 @@
 // schema.prisma
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["jsonProtocol"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("POSTGRES_PRISMA_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
 model Post {
@@ -30,28 +30,28 @@ model User {
   @@map(name: "users")
 }
 
-model Brand {
-  id       String    @id @default(cuid())
-  name     String
-  products Product[]
-}
+// model Brand {
+//   id       String    @id @default(cuid())
+//   name     String
+//   products Product[]
+// }
 
-model Product {
-  id        String    @id @default(cuid())
-  title     String
-  price     Int
-  thumb     String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  brand     Brand?    @relation(fields: [brandId], references: [id])
-  brandId   String?
-  des       String?   @unique
-  variants  Variant[]
-}
+// model Product {
+//   id        String    @id @default(cuid())
+//   title     String
+//   price     Int
+//   thumb     String
+//   createdAt DateTime  @default(now())
+//   updatedAt DateTime  @updatedAt
+//   brand     Brand?    @relation(fields: [brandId], references: [id])
+//   brandId   String?
+//   des       String?   @unique
+//   variants  Variant[]
+// }
 
-model Variant {
-  id        String  @id @default(cuid())
-  name      String
-  productId String
-  product   Product @relation(fields: [productId], references: [id])
-}
+// model Variant {
+//   id        String  @id @default(cuid())
+//   name      String
+//   productId String
+//   product   Product @relation(fields: [productId], references: [id])
+// }
